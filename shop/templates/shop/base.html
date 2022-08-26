@@ -1,0 +1,82 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" href="data:;base64,=">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" type='text/css' href="{% static 'shop/css/base.css' %}">
+    {% block link %} {% endblock %}
+    <title>StrongNation{% block title %}{% endblock %}</title>
+</head>
+
+<body>
+    <div class="home screen">
+        <div class="logo">
+            <img class="logo-1" src="/pictures/logo.jpg" alt="">
+        </div>
+        <div class="mail htooltip">order@strongnation.shop
+            <span> Почта для заказов </span>
+        </div>
+        <div class="mySlides fade">
+            <img class="children" src="/pictures/children.jpg" alt="">
+        </div>
+        <div class="mySlides fade">
+            <img class="children" src="/pictures/children1.jpg" alt="">
+        </div>
+        <div class="mySlides fade">
+            <img class="children" src="/pictures/children2.jpg" alt="">
+        </div>
+        <div class="mySlides fade">
+            <img class="children" src="/pictures/children3.jpg" alt="">
+        </div>
+        <div class="mySlides fade">
+            <img class="children" src="/pictures/children4.jpg" alt="">
+        </div>
+        <div class="mySlides fade">
+            <img class="children" src="/pictures/children5.jpg" alt="">
+        </div>
+        <div class="mySlides fade">
+            <img class="children" src="/pictures/children6.jpg" alt="">
+        </div>
+        <div class="mySlides fade">
+            <img class="children" src="/pictures/children7.jpg" alt="">
+        </div>
+        <div class="frame">
+            <a href="">
+                <img class="whatsapp" src="/pictures/whatsapp.svg" alt="" target="_blank">
+            </a>
+            <a href="">
+                <img class="instagram" src="/pictures/instagram.svg" alt="" target="_blank">
+            </a>
+            <a href="https://www.wildberries.ru/brands/2753750-Strong Nation" target="_blank">
+                <img class="wb" src="/pictures/wb.png" alt="">
+            </a>
+        </div>
+        <div class="rectangle"></div>
+        <div class="strong-nation">Strong <br> Nation</div>
+        <section class="slogan"> Одежда<br> для <br> милейших от</section>
+    </div>
+</body>
+    <script>
+        var slideIndex = 0;
+        showSlides();
+
+        function showSlides() {
+            var i;
+            var slides = document.getElementsByClassName("mySlides");
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";  
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) {slideIndex = 1}    
+                slides[slideIndex-1].style.display = "block";  
+            setTimeout(showSlides, 3000); // Change image every 2 seconds
+            }
+    </script>
+    {% block scripts %} 
+    {% endblock%}
+</html>
+
